@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>L'ArtDesChoix' - {% block title %}{% endblock %}</title>
+        <meta name="description" content="billeterie musée du Louvre">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="resources/demos/style.css">
+        <link rel="stylesheet" href="{{ asset('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css')}}" type="text/css" media="all"/>  
+        <link href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">    
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"> 
+    </head>
+
+    <body>
+  
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+<!-- Brand, toggle pour l'affichage en version mobile -->
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="logonav" href="{{path('home')}}">
+                        <img alt="Marque" src="images/LogoLDCtest.png">
+                    </a>
+                </div>
+
+<!-- Liens de navigation, formulaires et autres -->`
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a href="/">Accueil</a> </li>
+                        <li> <a href="/blog">Articles</a> </li>
+                        <li> <a href="#">Témoignages</a> </li>
+                        <li class="disabled"> <a href="#">Références</a> </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav> 
+        
+        <div class=" container-fluid"> 
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+         </div>
+
+<!-- jQuery -->
+    
+    <!-- Javascript de Bootstrap -->
+        <script type="text/javascript" src='js/style.js'></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <!-- Javascript de Bootstrap -->
+      
+  <script src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')}}"></script> 
+  <script>
+  
+        $(function () {
+    $('.carousel').carousel({ interval: 5000 })
+    
+  })
+    </script>
+
+</body>
+
+
+
+</html>

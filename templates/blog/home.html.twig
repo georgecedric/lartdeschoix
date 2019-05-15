@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}   "billetterie officielle" {% endblock %} 
+    
+{% block content %}
+
+    <div class=" logo">
+        <a href="{{path('home')}}"><img src="{{ asset('images/LogoLDC.png') }}" alt="Logo" class=" center-block"/></a>
+    </div>
+    <div class= "row text-center ">
+         <p> Engagé . Made In France . Recycler </P> 
+    </div>
+
+
+
+
+
+    <!-- Caroussel================================================== -->
+    
+<div class="container-fluid"> 
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>        
+            </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{{ asset('images/Carroussel01.jpeg') }}"  alt="carrousel01" />
+            </div>
+            <div class="item">
+                <img src="{{ asset('images/Carroussel04.jpeg') }}"  alt="carrousel02" />   
+            </div>
+            <div class="item"> 
+                <img src="{{ asset('images/Carroussel05.jpeg') }}"  alt="carrousel03" />   
+            </div>     
+        </div>       
+            <a class="left carousel-control" href="#carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+     </div>
+</div>  
+
+
+<div class= "col-sm-offset-1 col-sm-10 presentationarticle  ">
+    <div class= "row  text-center ">
+        <h1> Articles à la une </h1>
+    </div>
+    
+    <div class="col-sm-4 ">
+        <div class="col-sm-10 articleshow">
+            <img src= "http://placehold.it/275/" alt ="">
+             <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
+                Morbi nec elementum eros. Donec pulvinar ex mollis neque molestie, a efficitur purus ullamcorper.
+            </p>       
+        </div>   
+     </div>  
+
+    <div class="col-sm-4 ">
+        <div class="col-sm-offset-1 col-sm-10 articleshow">
+            <img src= "http://placehold.it/275/" alt ="">
+             <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
+                Morbi nec elementum eros. Donec pulvinar ex mollis neque molestie, a efficitur purus ullamcorper.
+            </p>       
+        </div>   
+    </div>   
+
+    <div class="col-sm-4 ">
+        <div class="col-sm-offset-2 col-sm-10 articleshow">
+            <img src= "http://placehold.it/275/" alt ="">
+             <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
+                Morbi nec elementum eros. Donec pulvinar ex mollis neque molestie, a efficitur purus ullamcorper.
+            </p>       
+        </div>   
+    </div>   
+</div>
+
+
+<div class= "col-sm-offset-1 col-sm-10 presentationarticle  ">
+    <div class= "row  text-center ">
+        <h1> Dernier Tuto </h1>
+    </div>
+
+    
+        <div class="articleshow ">
+            <img src= "http://placehold.it/1000X400" alt ="" class="center-block ">
+             <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
+                Morbi nec elementum eros. Donec pulvinar ex mollis neque molestie, a efficitur purus ullamcorper.
+            </p>       
+        </div>   
+     
+</div>
+
+<div class= "col-sm-offset-1 col-sm-10 presentationarticle  ">
+    <div class= "row  text-center ">
+        <h1> Dernières créations </h1>
+    </div>
+    
+    <div class="col-sm-3 ">
+        <div class="col-sm-10 articleshow">
+            <img src= "http://placehold.it/200/" alt ="">
+                  
+        </div>   
+     </div>  
+        
+    <div class="col-sm-3 ">
+        <div class="col-sm-10 articleshow">
+            <img src= "http://placehold.it/200/" alt ="">
+                  
+        </div>   
+     </div> 
+        
+    <div class="col-sm-3 ">
+        <div class="col-sm-10 articleshow">
+            <img src= "http://placehold.it/200/" alt ="">
+                  
+        </div>   
+     </div> 
+        
+    <div class="col-sm-3 ">
+        <div class="col-sm-10 articleshow">
+            <img src= "http://placehold.it/200/" alt ="">
+                  
+        </div>   
+     </div> 
+
+    
+</div>
+                
+
+{% endblock %} 

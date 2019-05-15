@@ -1,0 +1,106 @@
+
+/*------base.html----*/
+
+body{
+    background-color: #eceff4;
+    text-align: justify;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+  }
+
+.navbar-brand {
+    padding-bottom: 20px;
+}
+
+.navbar-default {
+    /* Couleur de fond de la barre de navigation */
+    background-color: rgb(51, 61, 53);
+    border-color: #E7E7E7;
+
+   }
+
+/* Couleur des titres affichés dans la barre */
+.navbar-default .navbar-brand {
+    color: blue;
+   }
+   /* Couleur utilisée lors du passage de la souris sur un titre de la barre */
+   .navbar-default .navbar-brand:hover,
+   .navbar-default .navbar-brand:focus {
+    color: blue;
+   }
+   /* Couleur utilisée pour les liens */
+   .navbar-default .navbar-nav > li > a {
+    color: white;
+   }
+   /* Couleur utilisée pour les liens lorsque la souris passe dessus */
+   .navbar-default .navbar-nav > li > a:hover,
+   .navbar-default .navbar-nav > li > a:focus {
+    color: blue;
+   }
+   /* Couleur utilisée pour le lien actif (celui qui est affiché sur la page) */
+   .navbar-default .navbar-nav > .active > a, 
+   .navbar-default .navbar-nav > .active > a:hover, 
+   .navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+   }
+
+
+
+.logo img {
+    width: 10%;
+}
+.logonav img {
+    width: 20%;
+    
+}
+
+
+
+
+
+/*------carroussel----*/
+
+.carroussel img {
+    width: 120%;
+}
+
+.carousel{
+    margin-top: 20px;   
+}
+
+.carousel img {
+    width: 1500px; 
+    height: 50px; 
+    object-fit: cover; 
+}
+
+    /*------artcile----*/
+
+.detailArticle{
+    background-color: white;
+    
+    box-shadow: 8px 8px 12px #aaa;
+    padding:15px;
+    margin-bottom: 10px;
+
+}
+
+
+.presentationarticle h1{
+       margin-top: 80px;
+       margin-bottom: 40px; 
+       text-decoration: underline  #20774b; 
+   }
+
+.articleshow{
+    border-top: 8px solid #20774b;
+    background-color: white;
+    padding:2px;
+    box-shadow: 8px 8px 12px #aaa;
+   }

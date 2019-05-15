@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {% endblock %}
+
+{% block body %}
+
+
+
+
+{% for article in articles %}
+    <section class="article col-sm-offset-2 col-sm-8" >
+        <div class= "detailArticle">
+        <article>
+            <h2> {{article.title}} </h2>
+            <div class="metadata">Écrit le {{article.createdAt | date('d/m/Y')}} dans la catégorie recyclage </div>
+            <div class="content">
+                <img src= "{{article.image}}" alt ="">
+                {{article.content | raw}}
+                <a href="{{ path('blog_show', {'id': article.id})}}" class="btn btn-primary"> lire la suite </a>
+            </div>
+        <article>
+        </div>
+
+         
+    </section>
+{% endfor %}
+
+{% endblock %}

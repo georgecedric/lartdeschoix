@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+    <section class="article" >
+        <article>
+            <h2> {{article.title}} </h2>
+            <div class="metadata">Écrit le 09/09/2019 à 14H00 dans la catégorie recyclage </div>
+            <div class="content">
+                <img src= "{{article.image}}" alt ="" class="center-block">
+                {{article.content | raw}}
+                
+            </div>
+        <article>
+        
+    </section>
+{% endblock %}
