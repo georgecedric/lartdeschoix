@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
+
 class BlogController extends AbstractController
 {
     /**
@@ -26,6 +29,20 @@ class BlogController extends AbstractController
     public function home()
     {
         return $this->render('blog/home.html.twig');
+    }
+
+    /**
+     * @Route("/blog/new", name="blog_create")
+     */
+    public function create(Request $request,ObjectManager $manager)
+    {
+        $article = new article();
+        $form = $this->createFormBuilder($article)
+                    ->add('title')
+                    ->add('content')
+                    ->add('image')
+                    ->getForm();
+        return $this->render('blog/create.html.twig');
     }
 
     /**
