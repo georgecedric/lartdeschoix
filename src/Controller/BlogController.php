@@ -8,7 +8,7 @@ use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
-
+use App\Form\ArticleType;
 class BlogController extends AbstractController
 {
     /**
@@ -33,16 +33,36 @@ class BlogController extends AbstractController
 
     /**
      * @Route("/blog/new", name="blog_create")
+     * @Route("/blog/{id}/edit", name="blog_edit")
      */
-    public function create(Request $request,ObjectManager $manager)
+    public function form(Article $article = null,Request $request,ObjectManager $manager)
     {
-        $article = new article();
-        $form = $this->createFormBuilder($article)
-                    ->add('title')
-                    ->add('content')
-                    ->add('image')
-                    ->getForm();
-        return $this->render('blog/create.html.twig');
+        if(!$article){
+            $article = new article();
+        }
+        
+
+        $formArticle = $this->createForm(ArticleType::class, $article);
+
+        $formArticle ->handleRequest($request);
+        if($formArticle->isSubmitted() && $formArticle->isValid()){
+            if(!$article->getId()){
+                $article->setCreatedAT(new \DateTime());
+            }
+
+            
+            $manager->persist($article);
+            $manager->flush();
+
+            return $this->redirectTORoute('blog_show',['id' => $article->getId()]);
+        }
+
+        dump ($article);
+                    
+        return $this->render('blog/create.html.twig', [
+            'formArticle' => $formArticle->createView(),
+            'editMode' => $article->getId() !== null
+            ]);
     }
 
     /**

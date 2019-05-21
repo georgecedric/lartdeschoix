@@ -3,7 +3,17 @@
 {% block title %}Hello {% endblock %}
 
 {% block body %}
-
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
  <h1> création de l'article <h1>
+  {{ form_start(formArticle)}}
+  {{ form_widget(formArticle)}}
+  <button type="submit" class="btn btn-success">
+  {% if editMode %}
+    Enregistrer les modification
+  {% else %}
+  Ajouter l'article
+  {% endif %}
+   </button>
+  {{ form_end(formArticle)}}
 
 {% endblock %}
