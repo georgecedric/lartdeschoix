@@ -3,10 +3,12 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
+<div class="inscription col-sm-offset-2 col-sm-8">
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
- <h1> Inscription <h1>
-  {{ form_start(form)}}
-  {{ form_widget(form)}}
-  <button type="submit" class="btn btn-success">Inscription</button>
-  {{ form_end(form)}}
+    <h2 class="forminscription"> Inscription <h2>
+    {{ form_start(form)}}
+    {{ form_widget(form)}}
+    <button type="submit" class="btn btn-success">Inscription</button>
+</div>
+    {{ form_end(form)}}
 {% endblock %}
