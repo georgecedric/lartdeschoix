@@ -3,6 +3,7 @@
 {% block title %}Hello {% endblock %}
 
 {% block body %}
+<div class="articlecreate">
 {% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
  <h1> création de l'article <h1>
   {{ form_start(formArticle)}}
@@ -15,5 +16,5 @@
   {% endif %}
    </button>
   {{ form_end(formArticle)}}
-
+</div>
 {% endblock %}
