@@ -38,7 +38,12 @@
                         <li> <a href="/">Accueil</a> </li>
                         <li> <a href="{{path('blog')}}">Articles</a> </li>
                         <li> <a href="{{path('blog_create')}}">creer un article</a> </li>
-                        <li> <a href="{{path('security_registration')}}">Inscription</a> </li>
+
+                        {% if not app.user %}
+                        <li> <a href="{{path('security_login')}}">Connexion</a> </li>
+                        {% else %}
+                        <li> <a href="{{path('security_logout')}}">Déconnexion</a> </li>
+                        {% endif %}
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
