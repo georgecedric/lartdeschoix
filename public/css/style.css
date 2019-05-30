@@ -117,6 +117,12 @@ body{
     margin-bottom: 10px;
 }
 
+.login{
+    background-color: white;
+    box-shadow: 8px 8px 12px #aaa;
+    padding:15px;
+    margin-bottom: 10px;
+}
 
 
 

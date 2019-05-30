@@ -6,7 +6,7 @@
     <section class="article" >
         <article>
             <h2> {{article.title}} </h2>
-            <div class="metadata">Écrit le 09/09/2019 à 14H00 dans la catégorie recyclage </div>
+            <div class="metadata">Écrit le 09/09/2019 à 14H00 dans la catégorie  </div>
             <div class="content">
                 <img src= "{{article.image}}" alt ="" class="center-block">
                 {{article.content | raw}}
@@ -15,4 +15,32 @@
         <article>
         
     </section>
+
+ <section class="commentaire" >
+        <h2> {{ article.comments | length }} commentaires : </h2>
+        {% for comment in article.comments %}
+            <div class="comment">
+                <div class="row">
+                <div class="col-sm-3">
+                 {{comment.author}}({{comment.createdAt | date('d/m/Y')}})
+                </div>
+                <div class="col-sm-8">
+                    {{comment.content | raw}}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if app.user %}
+        {{ form_start(commentForm)}}
+        {{ form_widget(commentForm)}}
+         <button type="submit" class="btn btn-success">Inscription</button>
+        {{ form_end(commentForm)}}
+        {% else %}
+            <h2> vous ne pouvez pas commenter, si vous n'etes pas connecté</h2>
+            <a href="{{path('security_login')}}"> <button type="submit" class="btn btn-success">Inscription</button></a>
+
+        {% endif %}
+        
+    </section>
+
 {% endblock %}
