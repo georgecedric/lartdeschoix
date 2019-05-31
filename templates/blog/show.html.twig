@@ -33,11 +33,11 @@
         {% if app.user %}
         {{ form_start(commentForm)}}
         {{ form_widget(commentForm)}}
-         <button type="submit" class="btn btn-success">Inscription</button>
+         <button type="submit" class="btn btn-success">publier commentaires</button>
         {{ form_end(commentForm)}}
         {% else %}
             <h2> vous ne pouvez pas commenter, si vous n'etes pas connecté</h2>
-            <a href="{{path('security_login')}}"> <button type="submit" class="btn btn-success">Inscription</button></a>
+            <a href="{{path('security_login')}}"> <button type="submit" class="btn btn-success">Connexion</button></a>
 
         {% endif %}
         
